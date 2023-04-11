@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.center-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: auto;
+}
+
+.center-col {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+body {
+  background: grey;
+}
+body main {
+  padding: 30px;
+  background: yellow;
+  margin: auto;
+}
+body main .btns3 {
+  display: flex;
+  margin-top: 5px;
+}
+body main .btns3 button {
+  margin: 0 5px;
+}
+body main .addBookInputs {
+  display: none;
+}
+body main .searchKeyBtn {
+  margin: 8px 8px;
+}/*# sourceMappingURL=index.css.map */

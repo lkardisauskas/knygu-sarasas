@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.center-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: auto;
+}
+.center-col {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+/////////////////////////////////////////////////////
+body {
+  background: grey;
+
+  main {
+    padding: 30px;
+    background: yellow;
+    margin: auto;
+
+    .btns3 {
+      display: flex;
+      margin-top: 5px;
+      button {
+        margin: 0 5px;
+      }
+    }
+    .addBookInputs {
+      display: none;
+    }
+    .searchKeyBtn {
+      margin: 8px 8px;
+    }
+  }
+}

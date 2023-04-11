@@ -1,0 +1,18 @@
+git fetch (atnaujinti local git iš remote)
+
+git pull (naujausius pakeitimus pasiimti)
+
+git checkout -b my-new-branch
+
+git branch (pasižiūrėti branch listą)
+
+
+ 
+
+Naujas commitas stepai:
+
+git add .
+
+git commit -m ‘commit message’
+
+git push origin -u branchname ar git push
