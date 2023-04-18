@@ -32,11 +32,49 @@ body main {
 }
 body main .btns3 {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 5px;
 }
 body main .btns3 button {
   margin: 0 5px;
 }
+body main .addBookInputs {
+  display: none;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: flex-end;
+  margin: 10px 0;
+}
 body main .searchKeyBtn {
   margin: 8px 8px;
+}
+body .bookshelf {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 25px;
+  justify-content: center;
+  gap: 30px;
+}
+body .bookshelf .card-body {
+  height: 88px;
+  max-height: 300px;
+}
+body .bookshelf img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 62%;
+}
+body .bookshelf .card-body-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+body .bookshelf .card-body-footer h5 {
+  margin-top: 0.5rem;
+}
+body .bookshelf .card-body-footer button {
+  max-height: 40px;
 }/*# sourceMappingURL=index.css.map */

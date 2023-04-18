@@ -53,29 +53,72 @@
       </div>
 
       <div class="btns3 center">
-        <button>Ieskoti pagal raktazodi</button>
-        <button>Filtruoti knygas</button>
-        <button>Rusiuoti knygas</button>
-      </div>
+        <!-- Filtruoti -->
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Filtruoti
+          </button>
+          <ul class="dropdown-menu" id="filterMenu"></ul>
+        </div>
+        <!-- Rusiuoti -->
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="sortMenuBtn"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Rusiuoti
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <button class="dropdown-item" id="sortDefault" type="button">
+                default
+              </button>
+              <button class="dropdown-item" id="sortLowHigh" type="button">
+                Nuo zemiausios iki auksciausios
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item" id="sortHighLow" type="button">
+                Nuo auksciausios iki zemiausios
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- Pagal raktazodi -->
+        <div class="dropdown">
+          <button
+            type="button"
+            class="btn btn-primary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-auto-close="outside"
+          >
+            Ieskoti pagal raktazodi
+          </button>
+          <form class="dropdown-menu p-4">
+            <div class="mb-3">
+              <!-- <label for="exampleDropdownFormEmail2" class="form-label"
+                >Email address</label> -->
 
-      <div id="searchKeyBtn" class="searchKeyBtn center">
-        <label for="searchKey">Ieskoti pagal raktazodi</label>
-        <input id="searchKey" class="searchKey" type="text" />
-        <input type="submit" />
-      </div>
-
-      <div class="filterMenu center">
-        <div class="filterCheckBoxes">
-          <div class="checkBox">
-            <label for="filterAuthor">Filtruoti pagal autoriu</label>
-            <input type="checkbox" name="filterAuthor" id="filterAuthor" />
-          </div>
-          <div class="checkBox">
-            <label for="filterAuthor">Filtruoti pagal kategorija</label>
-            <input type="checkbox" name="filterCategory" id="filterCategory" />
-          </div>
+              <input id="searchBar" class="searchBar" type="text" />
+            </div>
+          </form>
         </div>
       </div>
+
+      <!-- <div id="searchKeyBtn" class="searchKeyBtn center">
+        <label for="searchKey">Ieskoti pagal raktazodi</label> -->
+      <!-- <input id="searchBar" class="searchBar" type="text" /> -->
+      <!-- <input type="submit" />
+      </div> -->
     </main>
     <div id="bookshelf" class="bookshelf"></div>
 
