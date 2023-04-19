@@ -8,8 +8,14 @@ window.addEventListener("load", () => {
 
 btnAddBook.addEventListener("click", () => {
   const addBookInputs = document.getElementById("addBookInputs");
+  const btns3 = document.getElementById("btns3");
+  btns3.style.display = btns3.style.display === "none" ? "flex" : "none";
   addBookInputs.style.display =
     addBookInputs.style.display === "flex" ? "none" : "flex";
+  btnAddBook.innerText =
+    btnAddBook.innerText === "Prideti knyga"
+      ? "Isjungti knygos pridejima"
+      : "Prideti knyga";
 });
 
 submitNewBook.addEventListener("click", (e) => {
@@ -22,13 +28,28 @@ submitNewBook.addEventListener("click", (e) => {
   const bookPicture = document.getElementById("bookPicture");
 
   const book = {
-    KnygosPavadinimas: bookName.value,
-    KnygosAutorius: bookAuthor.value,
-    Kategorija: bookCategory.value,
+    KnygosPavadinimas:
+      bookName.value.charAt(0).toUpperCase() + bookName.value.slice(1),
+    KnygosAutorius:
+      bookAuthor.value.charAt(0).toUpperCase() + bookAuthor.value.slice(1),
+    Kategorija:
+      bookCategory.value.charAt(0).toUpperCase() + bookCategory.value.slice(1),
     IsleidimoMetai: bookReleaseYear.value,
     Kaina: bookPrice.value,
     url: bookPicture.value,
   };
+
+  if (
+    bookName.value === "" ||
+    bookAuthor.value === "" ||
+    bookCategory.value === "" ||
+    bookReleaseYear.value === "" ||
+    bookPrice.value === "" ||
+    bookPicture.value === ""
+  ) {
+    alert("Uzpildykite visus laukelius");
+    return;
+  }
   books = JSON.parse(localStorage.getItem("books")) || [];
   books.push(book);
   localStorage.setItem("books", JSON.stringify(books));
@@ -54,7 +75,7 @@ function displayBooks(searchTerm = "", authorFilter = null, sortType = null) {
         book.KnygosPavadinimas.toLowerCase().includes(searchTerm.toLowerCase())
       )
       .filter((book) => {
-        if (authorFilter === null || authorFilter === "All books") {
+        if (authorFilter === null || authorFilter === "Visos knygos") {
           return true;
         }
         // return book.KnygosAutorius === authorFilter;
@@ -87,7 +108,7 @@ function displayBooks(searchTerm = "", authorFilter = null, sortType = null) {
           </ul>
           <div class="card-body card-body-footer">
             <h5>${filteredBooks[i].Kaina}$</h5>
-            <button class="btn btn-primary" data-book-index="${i}">Delete</button>
+            <button class="btn btn-primary" data-book-index="${i}">Pirkti</button>
           </div>
         </div>
         `;
@@ -114,7 +135,7 @@ function createFilterMenu() {
 
   const allBooksOption = document.createElement("li");
   allBooksOption.innerHTML =
-    '<button class="dropdown-item" type="button">All books</button>';
+    '<button class="dropdown-item" type="button">Visos knygos</button>';
   filterMenu.appendChild(allBooksOption);
 
   allBooksOption.addEventListener("click", () => {

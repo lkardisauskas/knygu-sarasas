@@ -14,67 +14,78 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="nav">
+    <video autoplay muted loop id="bg-video">
+      <source src="./background_video.mp4" type="video/mp4" />
+    </video>
+
+    <div class="nav center">
       <h1>Knygu sarasas</h1>
     </div>
     <main>
       <div class="center addBook">
         <div class="btnAddBook">
-          <button id="btnAddBook">Prideti knyga</button>
+          <button id="btnAddBook" class="btn btn-success">Prideti knyga</button>
         </div>
       </div>
 
       <div id="addBookInputs" class="addBookInputs center-col">
         <div class="bookInput">
           <label for="bookName">Knygos pavadinimas</label>
-          <input type="text" id="bookName" class="bookName" />
+          <input type="text" id="bookName" class="bookName" required />
         </div>
         <div class="bookInput">
           <label for="bookAuthor">Knygos autorius</label>
-          <input type="text" id="bookAuthor" class="bookAuthor" />
+          <input type="text" id="bookAuthor" class="bookAuthor" required />
         </div>
         <div class="bookInput">
           <label for="bookCategory">Kategorija</label>
-          <input type="text" id="bookCategory" class="bookCategory" />
+          <input type="text" id="bookCategory" class="bookCategory" required />
         </div>
         <div class="bookInput">
           <label for="bookReleaseYear">Isleidimo metai</label>
-          <input type="text" id="bookReleaseYear" class="bookReleaseYear" />
+          <input
+            type="text"
+            id="bookReleaseYear"
+            class="bookReleaseYear"
+            required
+          />
         </div>
         <div class="bookInput">
           <label for="bookPrice">Kaina</label>
-          <input type="text" id="bookPrice" class="bookPrice" />
+          <input type="text" id="bookPrice" class="bookPrice" required />
         </div>
         <div class="bookInput">
-          <label for="bookPicture">Nuoroda i knygos nuotrauka</label>
-          <input type="text" id="bookPicture" class="bookPicture" />
+          <label for="bookPicture">Nuotrauka</label>
+          <input type="text" id="bookPicture" class="bookPicture" required />
         </div>
-        <button type="submit" id="submitNewBook">Submit</button>
+        <button type="submit" class="btn btn-success" id="submitNewBook">
+          Submit
+        </button>
       </div>
 
-      <div class="btns3 center">
+      <div id="btns3" class="btns3 center">
         <!-- Filtruoti -->
         <div class="dropdown">
           <button
-            class="btn btn-secondary dropdown-toggle"
+            class="btn btn-primary dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Filtruoti
+            Filtruoti autoriu
           </button>
           <ul class="dropdown-menu" id="filterMenu"></ul>
         </div>
         <!-- Rusiuoti -->
         <div class="dropdown">
           <button
-            class="btn btn-secondary dropdown-toggle"
+            class="btn btn-primary dropdown-toggle"
             type="button"
             id="sortMenuBtn"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Rusiuoti
+            Rusiuoti kaina
           </button>
           <ul class="dropdown-menu">
             <li>
@@ -86,7 +97,11 @@
               </button>
             </li>
             <li>
-              <button class="dropdown-item" id="sortHighLow" type="button">
+              <button
+                class="dropdown-item btn-primary"
+                id="sortHighLow"
+                type="button"
+              >
                 Nuo auksciausios iki zemiausios
               </button>
             </li>
